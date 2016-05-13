@@ -1,0 +1,38 @@
+<html>
+<body>
+
+<form action="/create-message" method="post">
+    <input type="text" placeholder="Write a message" name="message"/>
+    <button type="submit">Submit</button>
+</form>
+<br>
+    <form action="/delete-message" method="delete">
+        <textarea name="message" placeholder="Delete a message"></textarea>
+        <input type="hidden" name="replyId" value="{{replyIdNum}}">
+
+        <button type="Delete">Delete Message</button>
+    </form>
+    <br>
+    <form action="/edit-message" method="edit">
+        <textarea name="message" placeholder="Edit a message"></textarea>
+        <input type="hidden" name="replyId" value="{{replyIdNum}}">
+
+        <button type="edit">Edit Message</button>
+    </form>
+    <br>
+
+
+{{#user}}
+    <p>Messages by {{name}}!</p>
+{{/user}}
+<ol>
+    {{#messages}}
+        <li>{{text}}</li>
+    {{/messages}}
+</ol>
+
+
+
+
+</body>
+</html>
